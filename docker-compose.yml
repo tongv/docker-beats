@@ -3,8 +3,12 @@ services:
   filebeat:
     build:
       context: "./filebeat/"
+    network_mode: "host"
     volumes:
+          - "./filebeat/data/:/usr/share/filebeat/data/:rw"
           - "./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro"
           - "./filebeat/prospectors.d:/usr/share/filebeat/prospectors.d:ro"
           - "./filebeat/modules.d:/usr/share/filebeat/modules.d:ro"
           - "/data0/web/logs/:/logs/web/:ro"
+          - "/data0/web/vhost/:/logs/project/:ro"
+          - "/var/log/audit/:/logs/audit/:ro"

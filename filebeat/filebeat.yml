@@ -6,13 +6,5 @@ filebeat.config:
     path: ${path.config}/modules.d/*.yml
     reload.enabled: false
 
-processors:
-- add_cloud_metadata:
-
-#output.logstash:
-#    hosts: ['t2.srv.6rooms.net:5044']
 output.elasticsearch:
-    hosts: ['t2.srv.6rooms.net:9200']
-setup.kibana.host: "t2.srv.6rooms.net:5601"
-
-logging.level: debug
+    hosts: ['p1.srv.6rooms.net:9911']

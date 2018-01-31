@@ -10,3 +10,10 @@
     name: slow
   paths:
     - /logs/web/php/php-fpm-slow.log
+- input_type: log
+  fields:
+    module: php
+    name: laravel
+  paths:
+    - /logs/project/meiye/writeable/storage/logs/laravel.log
+    - /logs/project/meiyeadmin/writeable/storage/logs/laravel.log
