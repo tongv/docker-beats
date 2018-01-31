@@ -1,0 +1,4 @@
+- module: redis
+  slowlog:
+    enabled: true
+    var.hosts: ["localhost:6379"]

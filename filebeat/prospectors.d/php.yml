@@ -1,0 +1,12 @@
+- input_type: log
+  fields:
+    module: php
+    name: error
+  paths:
+    - /logs/web/php/php-fpm-error.log
+- input_type: log
+  fields:
+    module: php
+    name: slow
+  paths:
+    - /logs/web/php/php-fpm-slow.log
