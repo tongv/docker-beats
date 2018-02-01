@@ -12,3 +12,13 @@ services:
           - "/data0/web/logs/:/logs/web/:ro"
           - "/data0/web/vhost/:/logs/project/:ro"
           - "/var/log/audit/:/logs/audit/:ro"
+  packetbeat:
+    build:
+      context: "./packetbeat/"
+    network_mode: "host"
+    cap_add:
+          - NET_ADMIN
+    volumes:
+          - "./packetbeat/data/:/usr/share/packetbeat/data/:rw"
+          - "./packetbeat/packetbeat.yml:/usr/share/packetbeat/packetbeat.yml:ro"
+

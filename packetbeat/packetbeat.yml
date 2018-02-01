@@ -1,0 +1,26 @@
+#packetbeat.interfaces.device: any
+packetbeat.interfaces.type: af_packet
+packetbeat.interfaces.buffer_size_mb: 100
+packetbeat.protocols:
+
+- type: dns
+  ports: [53]
+  include_authorities: true
+  include_additionals: true
+
+- type: http
+  ports: [80]
+
+#- type: mysql
+#  ports: [3306]
+
+- type: redis
+  ports: [6379]
+
+#- type: tls
+#  ports: [443]
+
+output.elasticsearch:
+    hosts: ['p1.srv.6rooms.net:9911']
+
+#logging.level: debug
